@@ -1,0 +1,4 @@
+We have included two versions of the dynamic model which both demonstrate the necessary information. 
+The reason we have chosen to include both is one (dynamic_model_clothing) uses traditional UML stereotypes and illustrates a step-by-step process of the application at work.
+The diagram titled Dynamic_Model_Weather, on the other hand, gives an extensive illustration of the way the application interacts with itself and the user at all times. 
+
