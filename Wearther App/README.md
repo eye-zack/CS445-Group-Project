@@ -20,10 +20,10 @@ Explanations:
 •	Contains the source code for the application.
 8.	src/components/:
 •	Reusable UI components that can be used across multiple pages.
-•	Each component has its HTML, CSS, and JS files.
+•	Each component has its HTML, CSS, React.js, and JS files.
 9.	src/pages/:
 •	Different pages of the application.
-•	Each page has its HTML, CSS, and JS files.
+•	Each page has its HTML, CSS, React.js and JS files.
 10.	src/utils/:
 •	Utility functions that can be used throughout the application.
 11.	src/data/:
