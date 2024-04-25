@@ -3,6 +3,7 @@ import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import weatherBackground from '../images/weather-background.jpg';
 import heroImage from '../images/hero-image.jpg';
+import Search from '../Search/Search';
 
 function Home() {
     const navigate = useNavigate();
@@ -11,8 +12,13 @@ function Home() {
     const handleSignUpClick = () => navigate('/signup');
     const handleExploreClick = () => navigate('/'); // Assuming you want to stay on the home page for this button
 
+    const handleOnSearchChange = (searchData) => {
+        console.log(searchData);
+    }
+
     return (
             <div className="home-container" style={{ backgroundImage: `url(${weatherBackground})` }}>
+                <Search onSearchChange={handleOnSearchChange} />
                 <section className="hero" style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${heroImage})` }}>
                     <h1>Weather App for Your World</h1>
                     <p>Get accurate forecasts, no matter what adventure awaits.</p>
