@@ -15,7 +15,7 @@ function Login() {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:3000/login', { // Update this URL to match your actual API endpoint
+            const response = await fetch('http://localhost:3000/login', { // Update this URL to match actual API endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

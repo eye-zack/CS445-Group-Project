@@ -35,7 +35,8 @@ function SignUp() {
         };
 
     return (
-        <div className="signup-container">
+        // Keep ClassName as 'login-container'. This will use the login layout for Signup page
+        <div className="login-container">
             <h2>Sign Up</h2>
             <form onSubmit={handleSignUp}>
                 <div>

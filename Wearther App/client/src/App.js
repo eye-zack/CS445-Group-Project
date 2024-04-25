@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './Components/Login/Login'; // Ensure this matches the actual folder and file names
-import SignUp from './Components/SignUp/SignUp'; // Ensure this matches the actual folder and file names
-import Home from './Components/Home/Home'; // Ensure this matches the actual folder and file names
+import Login from './Components/Login'; // Ensure this matches the actual folder and file names
+import SignUp from './Components/SignUp'; // Ensure this matches the actual folder and file names
+import Home from './Components/Home'; // Ensure this matches the actual folder and file names
 import Search from './Components/Search/Search';
 
 function App() {
