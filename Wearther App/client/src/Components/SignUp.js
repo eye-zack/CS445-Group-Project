@@ -1,15 +1,30 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
+    const navigate = useNavigate(); 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSignUp = async (event) => {
         event.preventDefault();
-        // Implement the sign-up logic here
-        console.log('Sign Up Attempt:', username, email, password);
-        // Typically you would send a request to your backend to create a new user
+
+        // reset error message
+        setError('');
+
+        // Basic email verification
+        if (!email.includes('@') || !email.includes('.', email.indexOf('@'))){
+          setError('Please enter a valide email address');
+          return;
+        }
+
+        // Password length check
+        if (password.length < 8) {
+          setError('Password must be at least 8 characters long.');
+          return;
+        }
 
         try {
             const response = await fetch('http://localhost:3000/signup', {
@@ -21,15 +36,16 @@ function SignUp() {
             });
       
             if (!response.ok) {
-              throw new Error('Sign-up failed');
+              const data = await response.json();
+              throw new Error(data.message || 'Sign-up failed');
             }
       
             const data = await response.json();
             console.log('Sign-up successful:', data);
-            // Here you could redirect the user to the login page or a profile page
+            navigate('/login');
           } catch (error) {
             console.error('Sign-up error:', error);
-            // Display an error message to the user
+            setError(error.message);
           }
         };
 
@@ -40,16 +56,30 @@ function SignUp() {
             <form onSubmit={handleSignUp}>
                 <div>
                     <label>Username:</label>
-                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} required />
+                    <input 
+                    type="text" 
+                    value={username} 
+                    onChange={e => setUsername(e.target.value)} 
+                    required />
                 </div>
                 <div>
                     <label>Email:</label>
-                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+                    <input 
+                    type="email" 
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)} 
+                    required />
                 </div>
                 <div>
                     <label>Password:</label>
-                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
+                    <input 
+                    type="password" 
+                    value={password} 
+                    onChange={e => setPassword(e.target.value)} 
+                    required
+                    />
                 </div>
+                {error && <p className="error">{error}</p>}  {/* Display error message if any */}
                 <button type="submit">Sign Up</button>
             </form>
         </div>

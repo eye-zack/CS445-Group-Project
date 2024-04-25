@@ -30,5 +30,21 @@
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+    background-color: #023469;
+}
+
+/* Specific styles for the sign up button 
+    making it stand out from login button*/
+button.signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.signup-button:hover {
+    background-color: rgb(2, 61, 10);
+    color: black;
 }
