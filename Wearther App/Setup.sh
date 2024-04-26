@@ -1,6 +1,9 @@
 #!/bin/bash
 # Usage: To set up the development environment for the Weather App on Linux systems.
 
+# Ensure the script is run from the project's root directory
+cd "$(dirname "$0")"
+
 # Check for Git and install if not present
 if ! command -v git &> /dev/null; then
     echo "Git is not installed. Installing..."
@@ -22,6 +25,10 @@ export NVM_DIR="$HOME/.nvm"
 cd server
 nvm install
 npm install
+
+# Install CORS
+npm install cors
+
 cd ..
 
 # Go to the client directory and install client dependencies
