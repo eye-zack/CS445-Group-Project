@@ -1,8 +1,5 @@
 #!/bin/bash
-# Filename: setup.sh
-# Usage: To set up the development environment for the project on Linux systems.
-
-#!/bin/bash
+# Usage: To set up the development environment for the Weather App on Linux systems.
 
 # Check for Git and install if not present
 if ! command -v git &> /dev/null; then
@@ -10,26 +7,27 @@ if ! command -v git &> /dev/null; then
     sudo apt-get update && sudo apt-get install -y git
 fi
 
-# Install nvm (Node Version Manager)
-if ! command -v nvm &> /dev/null; then
+# Install nvm (Node Version Manager) if not present and load it
+if [ ! -d "$HOME/.nvm" ]; then
     echo "Installing nvm..."
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 fi
 
-# Install the correct Node.js version
+# Load nvm and install the required Node.js version, read from .nvmrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Go to the server directory and install server dependencies
+cd server
 nvm install
-
-# Use the correct Node.js version
-nvm use
-
-# Install npm dependencies
 npm install
+cd ..
 
-# Additional setup tasks...
+# Go to the client directory and install client dependencies
+cd client
+nvm use
+npm install
+cd ..
 
 echo "Setup complete! Please restart your terminal."
-
-chmod +x setup.sh
-

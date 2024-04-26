@@ -1,3 +1,26 @@
+For Windows Users:
+
+    Run the setup script:
+    Right-click on setup.ps1 and select "Run with PowerShell", or run it from the PowerShell interface as an administrator:
+
+.\setup.ps1
+
+This script will install Git if it's not already present, set up Node.js, install all the necessary Node packages for both the client and the server, and carry out any additional required setup tasks.
+
+For Linux Users:
+
+    Run the setup script:
+    Make the script executable and run it:
+
+./setup.sh
+
+If you encounter permissions issues, you may need to modify the script's permissions first:
+
+chmod +x setup.sh
+./setup.sh
+
+This script will install Node.js, set up the necessary Node packages for both the client and the server, and perform any other required setup tasks.
+
 Explanations:
 1.	public/:
 •	Contains files that will be served to the client's browser.
