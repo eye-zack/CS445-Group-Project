@@ -1,9 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
+app.use(cors());
+
+/*
+app.use(cors({
+  origin: 'http://example.com'  // Replace with the domain we will use in order to restrict requests.
+}));
+*/
 
 // Memory for user data
 // Note this data is lost when the server is restarted/shutdown
