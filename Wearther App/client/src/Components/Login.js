@@ -30,7 +30,7 @@ function Login() {
             if (response.ok) {
                 console.log('Login successful:', data);
                 // Redirect to another route after successful login
-                navigate('/some-route'); // set to dsahboard
+                navigate('/some-value'); // set to dashboard
             } else {
                 // set in server.js to show button
                 setShowSignUpButton(data.signupSuggested);
