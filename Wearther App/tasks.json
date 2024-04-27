@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Setup Project",
+            "type": "shell",
+            "command": "PowerShell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}\\setup.ps1\"",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "powershell.exe",
+                        "args": [
+                            "-NoProfile",
+                            "-ExecutionPolicy",
+                            "Bypass"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

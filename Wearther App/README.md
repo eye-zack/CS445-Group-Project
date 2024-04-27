@@ -1,3 +1,4 @@
+
 Explanations:
 1.	public/:
 •	Contains files that will be served to the client's browser.
