@@ -1,50 +1,50 @@
 .login-container {
-    width: 300px;
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .login-container form div {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .login-container label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .login-container input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .login-container button:hover {
-    background-color: #023469;
+  background-color: #023469;
 }
 
 /* Specific styles for the sign up button 
     making it stand out from login button*/
 button.signup-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 button.signup-button:hover {
-    background-color: rgb(2, 61, 10);
-    color: black;
+  background-color: rgb(2, 61, 10);
+  color: black;
 }

@@ -1,15 +1,15 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';  // Import the custom matchers.
-import Login from './Components/Login';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom"; // Import the custom matchers.
+import Login from "./Components/Login";
+import { BrowserRouter as Router } from "react-router-dom";
 
-test('renders the login form', () => {
+test("renders the login form", () => {
   render(
     <Router>
       <Login />
     </Router>
-  )
+  );
 
   const loginForm = screen.getByTestId("login-form");
   expect(loginForm).toBeInTheDocument();

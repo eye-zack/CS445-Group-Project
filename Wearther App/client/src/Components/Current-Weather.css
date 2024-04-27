@@ -1,0 +1,20 @@
+.weather {
+  width: 1000px;
+  border-radius: 6px;
+  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+  display: block;
+  margin: 20px auto 0 auto;
+  color: white;
+  background-color: dimgray;
+}
+
+.weather-icon {
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top {
+}

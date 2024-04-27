@@ -1,70 +1,69 @@
 /* General Styles */
-.home-container { 
-    /*background-image: url('/images/weather-background.jpg');*/
-    background-size: cover;           
-    background-position: center;  
-    color: white;                   
-    padding: 60px 20px;
-    /* setting min-height to adjust image to full screen*/
-    min-height: 100vh;
-  }
-  
-  .hero {
-    /*background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('/images/hero-image.jpg'); */
-    background-size: cover;
-    background-position: center; 
-    padding: 80px 20px;
-    color: white;
-    text-align: center;  /* Centers hero content */
-  }
-  
-  /* Button Styles */
-  .primary-cta { 
-    background-color: #24796a; 
-    color: white;  
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 1.2em;
-  } 
-  
-  .secondary-cta { 
-    background-color: #24796a; 
-    color: white;  
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 1.2em;
-  } 
-  
-  .tertiary-cta {
-    background-color: #24796a; 
-    color: white;   
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 1.2em;
-  }
-  
-  /* Layout for Button Group */
-  .button-group {
-    display: flex;
-    justify-content: center; 
-  }
-  
-  /* General Button Spacing (can be overridden if needed) */
-  button {
-    margin: 15px 10px; 
-  }
-  
-  /* Styles for Features Section*/
-  .features { 
-    margin-top: 60px;
-  }
-  
-  .feature-grid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
+.home-container {
+  /*background-image: url('/images/weather-background.jpg');*/
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 20px;
+  /* setting min-height to adjust image to full screen*/
+  min-height: 100vh;
+}
+
+.hero {
+  /*background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('/images/hero-image.jpg'); */
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+  text-align: center; /* Centers hero content */
+}
+
+/* Button Styles */
+.primary-cta {
+  background-color: #24796a;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.secondary-cta {
+  background-color: #24796a;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.tertiary-cta {
+  background-color: #24796a;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* Layout for Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+/* General Button Spacing (can be overridden if needed) */
+button {
+  margin: 15px 10px;
+}
+
+/* Styles for Features Section*/
+.features {
+  margin-top: 60px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
