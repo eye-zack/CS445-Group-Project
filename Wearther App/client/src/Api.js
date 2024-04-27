@@ -8,4 +8,4 @@ export const geoApiOptions = {
   export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 
   export const WEATHER_API_URL = "https://api.pirateweather.net"
-  export const WEATHER_API_KEY = "upec58L5V3NVxiQftPEUpYlv9EhIJ5Lf"
+  export const WEATHER_API_KEY = "" // put api key here 
