@@ -1,0 +1,2 @@
+var apiKey = 'ee6a756da9475441fbb2024c39b70921'; // API key from openweathermap.com
+var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
