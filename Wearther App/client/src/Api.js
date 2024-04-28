@@ -1,3 +1,4 @@
+// geoDB
 export const geoApiOptions = {
   method: "GET",
   headers: {
@@ -5,11 +6,14 @@ export const geoApiOptions = {
     "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
   },
 };
+
 export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 
-export const WEATHER_API_URL = "https://api.pirateweather.net";
-export const WEATHER_API_KEY = ""; // put api key here
+// pirateweather
+export const WEATHER_API_URL = "https://api.pirateweather.net/forecast/";
+export const WEATHER_API_KEY = "upec58L5V3NVxiQftPEUpYlv9EhIJ5Lf"; // put api key here
 
+// GeoLocation
 const url = "https://ip-geo-location4.p.rapidapi.com/?format=json";
 const options = {
   method: "GET",

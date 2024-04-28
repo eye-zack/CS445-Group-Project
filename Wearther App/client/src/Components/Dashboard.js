@@ -2,13 +2,37 @@ import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import Search from "./Search";
 import CurrentWeather from "./Current-Weather";
+import { WEATHER_API_URL, WEATHER_API_KEY } from "../Api";
 
 function Dashboard() {
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
+
   const [userLocation, setUserLocation] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
-    console.log(searchData);
+    const [lat, lon] = searchData.value.split(" ");
+
+    const currentWeatherFetch = fetch(
+      `${WEATHER_API_URL}/${WEATHER_API_KEY}/${lat},${lon}`
+    );
+    const forecastFetch = fetch(
+      `${WEATHER_API_URL}/${WEATHER_API_KEY}/${lat},${lon}`
+    );
+
+    Promise.all([currentWeatherFetch, forecastFetch])
+      .then(async (response) => {
+        const weatherResponse = await response[0].json();
+        const forcastResponse = await response[1].json();
+
+        setCurrentWeather({ city: searchData.label, ...weatherResponse });
+        setForecast({ city: searchData.label, ...forcastResponse });
+      })
+      .catch(console.log);
   };
+
+  console.log(currentWeather);
+  console.log(forecast);
 
   useEffect(() => {
     // check if the Geolocation API is supported
