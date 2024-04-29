@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+
 // SignUp route
 app.post('/signup', async (req, res) => {
   const { username, email, password } = req.body;

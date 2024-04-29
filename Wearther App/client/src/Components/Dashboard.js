@@ -11,13 +11,13 @@ function Dashboard() {
   const [userLocation, setUserLocation] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
-    const [lat, lon] = searchData.value.split(" ");
+    const [latitude, longitude] = searchData.value.split(" ");
 
     const currentWeatherFetch = fetch(
-      `${WEATHER_API_URL}/${WEATHER_API_KEY}/${lat},${lon}`
+      `${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`
     );
     const forecastFetch = fetch(
-      `${WEATHER_API_URL}/${WEATHER_API_KEY}/${lat},${lon}`
+      `${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`
     );
 
     Promise.all([currentWeatherFetch, forecastFetch])
@@ -55,7 +55,7 @@ function Dashboard() {
   return (
     <div>
       <Search onSearchChange={handleOnSearchChange} />
-      <CurrentWeather userLocation={userLocation} />
+      {currentWeather && <CurrentWeather data={currentWeather} />}
     </div>
   );
 }
