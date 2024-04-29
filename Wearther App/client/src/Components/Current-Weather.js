@@ -1,6 +1,6 @@
 import "./Current-Weather.css";
 
-const CurrentWeather = ({data}) => {
+const CurrentWeather = ({ data }) => {
   return (
     <div className="weather">
       <div className="top">
@@ -13,6 +13,11 @@ const CurrentWeather = ({data}) => {
           className="weather-icon"
           src={`WeatherIcons/${data.weather[0].icon}.png`}
         ></img>
+        <div>
+          <p className="ClothingDescription">
+            Clothing Reccomendations for {data.weather[0].description} weather:{" "}
+          </p>
+        </div>
         <img
           alt="weather"
           className="clothing-top-icon"
@@ -25,26 +30,28 @@ const CurrentWeather = ({data}) => {
         ></img>
       </div>
       <div className="bottom">
-        <p className="temperature">75°F</p>
+        <p className="temperature">{Math.round(data.main.temp)}°F</p>
         <div className="details">
           <div className="parameter-row">
             <span className="parameter-label top">Details</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Feels like</span>
-            <span className="parameter-value">78°F</span>
+            <span className="parameter-value">
+              {Math.round(data.main.feels_like)}°F
+            </span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
-            <span className="parameter-value">15 MPH</span>
+            <span className="parameter-value">{data.wind.speed} MPH</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Humidity</span>
-            <span className="parameter-value">71%</span>
+            <span className="parameter-value">{data.main.humidity}%</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Pressure</span>
-            <span className="parameter-value">30.00 inHg</span>
+            <span className="parameter-value">{data.main.pressure} inHg</span>
           </div>
         </div>
       </div>
