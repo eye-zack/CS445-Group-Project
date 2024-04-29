@@ -1,98 +1,118 @@
 .weather {
-  width: 80%; /* Responsive width */
-  max-width: 1000px; /* Limit maximum width */
+  width: 1000px;
   border-radius: 6px;
-  box-shadow: 10px -2px 20px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
   display: block;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   color: white;
   background-color: dimgray;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
 }
 
-.weather-icon,
-.clothing-bottom-icon,
 .weather-icon {
   width: 175px;
   height: 175px;
   display: block;
   margin: 100px auto auto 125px;
-  position: relative;
-  right: 100px;
-}
-
-.clothing-description {
-  position: relative;
 }
 
 .clothing-bottom-icon {
   width: 125px;
   height: 175px;
   display: block;
-  position: relative;
-  right: 30px;
-  top: 85px;
 }
 
 .clothing-top-icon {
-  width: 125px; /* Standardized the icon width for uniformity */
+  width: 125px;
   height: 175px;
   display: block;
-  position: relative;
-  right: 70px;
-  top: 60px;
 }
 
 .top,
 .bottom {
   display: flex;
-  justify-content: space-around; /* Improved spacing distribution */
+  justify-content: space-between;
   align-items: center;
 }
 
 .city {
-  font-weight: bold; /* Changed from numeric to keyword for clarity */
+  font-weight: 1000;
   font-size: 36px;
-  line-height: 1;
+  line-height: 0.5;
   margin: 0;
   letter-spacing: 2px;
 }
 
-.weather-description,
-.parameter-label,
-.parameter-value {
-  font-size: 18px; /* Uniform font size for labels and description */
+.weather-description {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1;
+  margin: 2;
 }
 
 .temperature {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 70px;
+  width: auto;
   letter-spacing: -5px;
   margin: 10px 0;
 }
 
-.details,
-.parameter-row {
-  width: 100%; /* Full width for better alignment */
+.details {
+  width: 100%;
+  padding-left: 20px;
 }
 
 .parameter-row {
+  width: 20%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px; /* Added padding for better spacing */
+  padding-left: 20px;
 }
 
 .parameter-label {
   text-align: left;
-  font-weight: normal; /* Adjusted for better text readability */
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .parameter-value {
   text-align: right;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .parameter-label.top {
   border-bottom: 1px solid white;
-  padding-bottom: 5px; /* Padding for aesthetic spacing */
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.95); }
+}
+
+.weather-icon {
+  animation: fadeIn 2s ease-out;
+}
+
+/* Use this class for partly cloudy weather */
+.weather-icon-partly-cloudy {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Use this class for windy conditions */
+.weather-icon-windy {
+  animation: slideInFromLeft 2s ease-out infinite alternate;
+}
+
