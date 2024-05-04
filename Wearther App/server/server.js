@@ -60,7 +60,7 @@ app.post('/login', async (req, res) => {
   // Find user in users array
   const user = users.find(user => user.username === username);
   if (!user){
-    return res.status(404).json({message: 'User not found. Consider sigining up!', signupSuggested: true})
+    return res.status(404).json({message: 'User not found. Consider signing up!', signupSuggested: true})
   }
   const passwordMatch = await bcrypt.compare(password, user.password);
   if (!passwordMatch){

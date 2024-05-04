@@ -1,6 +1,26 @@
 import "./Current-Weather.css";
 
 const CurrentWeather = ({ data }) => {
+  if (!data || !data.weather || data.weather.length === 0) {
+    // Handle the case where the data is not yet loaded
+    return <div>Loading...</div>;
+  }
+
+  let animationClass = '';
+
+  switch (data.weather[0].main) {
+    case 'Clouds':
+      animationClass = 'weather-icon-partly-cloudy';
+      break;
+    case 'Clear':
+      animationClass = 'weather-icon-sunny';
+      break;
+    // default case to handle unexpected weather conditions
+    default:
+      animationClass = '';
+      break;
+  }
+
   return (
     <div className="weather">
       <div className="top">
@@ -10,11 +30,11 @@ const CurrentWeather = ({ data }) => {
         </div>
         <img
           alt="weather"
-          className="weather-icon"
+          className={`weather-icon ${animationClass}`}
           src={`WeatherIcons/${data.weather[0].icon}.png`}
         ></img>
         <div>
-          <p className="ClothingDescription">
+          <p className="clothing-description">
             Clothing Reccomendations for {data.weather[0].description} weather:{" "}
           </p>
         </div>

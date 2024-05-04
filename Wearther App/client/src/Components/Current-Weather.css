@@ -19,7 +19,15 @@
 }
 
 .clothing-description {
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 2px;
   position: relative;
+  top: -25px;
+  left: 100px;
+  text-align: center;
 }
 
 .clothing-bottom-icon {
@@ -27,8 +35,8 @@
   height: 175px;
   display: block;
   position: relative;
-  right: 30px;
-  top: 85px;
+  right: 12%;
+  top: 115px;
 }
 
 .clothing-top-icon {
@@ -36,8 +44,8 @@
   height: 175px;
   display: block;
   position: relative;
-  right: 70px;
-  top: 60px;
+  right: 15%;
+  top: 95px;
 }
 
 .top,
@@ -96,4 +104,34 @@
 
 .parameter-label.top {
   border-bottom: 1px solid white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.95); }
+}
+
+.weather-icon {
+  animation: fadeIn 2s ease-out;
+}
+
+/* Use this class for partly cloudy weather */
+.weather-icon-partly-cloudy {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Use this class for windy conditions */
+.weather-icon-windy {
+  animation: slideInFromLeft 2s ease-out infinite alternate;
 }
